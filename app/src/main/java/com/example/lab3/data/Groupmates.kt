@@ -1,14 +1,13 @@
 package com.example.lab3.data
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.annotation.NonNull
+import androidx.room.*
 import java.util.*
 
 @Entity(tableName = "groupmates")
 data class Groupmates(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    @PrimaryKey
+    val uuid: String,
     @ColumnInfo(name = "fio")
     val fio: String,
     @ColumnInfo(name = "dateOfCreate")
