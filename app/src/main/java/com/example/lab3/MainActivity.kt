@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
     fun addToBase(view: View) {
         var texts = findViewById<EditText>(R.id.editTextHello)
         if (texts.text.isEmpty())
-            Toast.makeText(this,"Пустая сторока!!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Не может быть пустым", Toast.LENGTH_LONG).show()
         else
             DBConnect.db.groupmatesDAO().addGroupmate(Groupmates(UUID.randomUUID().toString(),texts.text.toString(), Calendar.getInstance().time.toString()))
             texts.text.clear()
